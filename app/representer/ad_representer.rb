@@ -1,6 +1,3 @@
-require "./company.rb"
-require "./company_representer"
-
 module AdRepresenter
   include Roar::Representer::JSON::HAL
 
