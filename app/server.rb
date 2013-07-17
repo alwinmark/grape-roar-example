@@ -65,4 +65,6 @@ class Server < Grape::API
     end
 
   end
+
+  add_swagger_documentation
 end

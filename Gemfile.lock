@@ -72,10 +72,14 @@ GEM
       rack-accept
       rack-mount
       virtus
+    grape-swagger (0.6.0)
+      grape (>= 0.2.0)
+      kramdown
     hashie (2.0.5)
     i18n (0.6.4)
     json (1.8.0)
     json_pure (1.8.0)
+    kramdown (1.1.0)
     mini_portile (0.5.1)
     minitest (4.7.5)
     multi_json (1.7.7)
@@ -112,6 +116,7 @@ DEPENDENCIES
   data_mapper
   dm-sqlite-adapter
   grape
+  grape-swagger
   puma
   require_all
   roar
