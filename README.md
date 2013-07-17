@@ -1,3 +1,10 @@
+## Start
+
+* `bundle install`
+* `bundle execute puma`
+
+## Documentation
+
 To view API Documentation go to:
 [http://petstore.swagger.wordnik.com/]
 
