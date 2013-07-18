@@ -8,7 +8,12 @@ module V1
     property :industry
 
     def industry
-      CompanyV1.get(id).industry
+      legacy_company = CompanyV1.get(id)
+      if legacy_company.nil?
+        "undescribed"
+      else
+        CompanyV1.get(id).industry
+      end
     end
 
     link :self do "http://localhost:9292/companies/#{id}" end
@@ -23,7 +28,12 @@ module V1
     property :industry
 
     def industry
-      CompanyV1.get(id).industry
+      legacy_company = CompanyV1.get(id)
+      if legacy_company.nil?
+        "undescribed"
+      else
+        CompanyV1.get(id).industry
+      end
     end
 
     collection :ads,
