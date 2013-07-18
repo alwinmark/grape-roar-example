@@ -8,3 +8,8 @@ gem "data_mapper"
 gem "dm-sqlite-adapter"
 gem "sqlite3"
 gem "require_all"
+
+group :test do
+  gem "rspec"
+  gem "rack-test"
+end
