@@ -25,10 +25,35 @@ module V2
   class AdRessource < Grape::API
 
     resource :ads do
+
+      route_param :id do
+        get do
+          ad = Ad.get(params[:id])
+          ad.extend AdRepresenter
+          ad
+        end
+      end
+
       get do
         ads = Ad.all
         ads.extend AdCollectionRepresenter
         ads
+      end
+
+      params do
+        requires :name, type: String, desc:"Ad name"
+        requires :image_url, type: String, desc:"Image URL"
+        requires :company_id, type: Integer, desc:"ID of a company"
+      end
+      post do
+        attributes = [:name, :image_url, :company_id].each_with_object({}) do |key, object|
+          object[key] = params[key]
+          object
+        end
+
+        ad = Ad.create(attributes)
+        ad.extend AdRepresenter
+        ad
       end
     end
   end

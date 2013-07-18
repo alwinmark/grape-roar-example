@@ -1,7 +1,7 @@
 module V1
   class API < Grape::API
 
-    mount AdRessource
+    mount V2::AdRessource
     mount CompanyRessource
   end
 end
