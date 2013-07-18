@@ -155,6 +155,31 @@ describe "companies" do
 
 
   context "compatibilty of new models" do
+    describe "show created v2 created company" do
+      subject { get_v1 "/companies/1" }
+
+      before(:all) do
+        DataMapper.auto_migrate!
+        post_v2 "/companies", name: "v2", credit_card_number: "1234"
+      end
+
+      after(:all) do
+        Company.all.destroy
+        CompanyV1.all.destroy
+      end
+
+      it { should_not be_nil }
+
+      it "should be parseable JSON" do
+        expect{ JSON.parse subject.body}.to_not raise_error
+      end
+
+      describe "JSON Object" do
+        subject { JSON.parse (get_v1 "/companies/1").body }
+
+        its(["name"]) { should eq("v2") }
+      end
+    end
 
   end
 end
