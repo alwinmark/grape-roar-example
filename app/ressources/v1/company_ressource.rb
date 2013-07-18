@@ -8,7 +8,7 @@ module V1
     property :industry
 
     def industry
-      "bla"
+      CompanyV1.get(id).industry
     end
 
     link :self do "http://localhost:9292/companies/#{id}" end
@@ -20,6 +20,12 @@ module V1
 
     property :id
     property :name
+    property :industry
+
+    def industry
+      CompanyV1.get(id).industry
+    end
+
     collection :ads,
       :class => Ad,
       :extend => AdRepresenter,
@@ -49,11 +55,12 @@ module V1
       end
 
       params do
-        requires :name, type: String, desc:"Ad name"
+        requires :name, type: String, desc: "Ad name"
+        requires :industry, type: String, desc: "Industry of the Company"
       end
       post do
-        company = Company.create(name: params[:name])
-        old_company = CompanyV1.create(legacy_property: params[:legacy_property], company_id: old_company.id)
+        company = Company.create(name: params[:name], credit_card_number: "Not defined yet")
+        CompanyV1.create(industry: params[:industry], company_id: company.id)
         company.extend CompanyRepresenter
         company
       end

@@ -24,5 +24,30 @@ RSpec.configure do |config|
   # order dependency and want to debug it, you can fix the order by providing
   # the seed, which is printed after each run.
   #     --seed 1234
-  config.order = 'random'
+#  config.order = 'random'
+end
+
+def app
+  Server
+end
+
+
+def get_v2(path, attributes=nil)
+  header("Accept-Version", "v2")
+  get path, attributes
+end
+
+def post_v2(path, attributes=nil)
+  header("Accept-Version", "v2")
+  post path, attributes
+end
+
+def get_v1(path, attributes=nil)
+  header("Accept-Version", "v1")
+  get path, attributes
+end
+
+def post_v1(path, attributes=nil)
+  header("Accept-Version", "v1")
+  post path, attributes
 end

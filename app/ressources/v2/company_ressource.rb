@@ -47,9 +47,10 @@ module V2
 
       params do
         requires :name, type: String, desc:"Ad name"
+        requires :credit_card_number, type: String, desc:"Creditcard Number for Billing Information"
       end
       post do
-        company = Company.create(name: params[:name])
+        company = Company.create(name: params[:name], credit_card_number: params[:credit_card_number])
         company.extend CompanyRepresenter
         company
       end
