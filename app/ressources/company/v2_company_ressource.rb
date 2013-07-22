@@ -19,7 +19,7 @@ module V2
     property :credit_card_number
     collection :ads,
       :class => Ad,
-      :extend => AdRepresenter,
+      :extend => V1::AdRepresenter,
       :embedded => true
 
     link :self do "http://localhost:9292/companies/#{id}" end

@@ -1,4 +1,4 @@
-module V2
+module V1
   module AdRepresenter
     include Roar::Representer::JSON::HAL
 

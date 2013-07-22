@@ -38,7 +38,7 @@ module V1
 
     collection :ads,
       :class => Ad,
-      :extend => V2::AdRepresenter,
+      :extend => V1::AdRepresenter,
       :embedded => true
 
     link :self do "http://localhost:9292/companies/#{id}/full" end
