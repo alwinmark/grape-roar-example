@@ -2,7 +2,7 @@
 
 Example of Grape using Roar with Versioning by Header (and Swagger).
 
-There are two Ressources with very basic routes to show a possible use of an possible Grape Hypermedia HAL API, so it could be used as a template.
+There are two Ressources with very basic routes to show a possible usage of an possible Grape Hypermedia HAL API, so it could be used as a template.
 
 Start
 

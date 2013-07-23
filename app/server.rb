@@ -4,6 +4,6 @@ class Server < Grape::API
   mount CompanyRessource
   mount AdRessource
 
-  # is broken now
-  add_swagger_documentation
+  # swagger seems to not support mounting, so it has to be added to every resource
+  # add_swagger_documentation
 end

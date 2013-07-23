@@ -56,6 +56,7 @@ module V1
         ad
       end
     end
-  end
 
+    add_swagger_documentation
+  end
 end

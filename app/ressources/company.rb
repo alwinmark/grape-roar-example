@@ -7,4 +7,6 @@ class CompanyRessource < Grape::API
   version 'v1', using: :accept_version_header
   mount V1::CompanyRessource
 
+
+  add_swagger_documentation
 end
