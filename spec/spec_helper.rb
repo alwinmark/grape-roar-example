@@ -5,6 +5,7 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 Bundler.require
+require_all './spec/support/**/*.rb'
 require_all './app/**/*.rb'
 
 require 'rack/test'

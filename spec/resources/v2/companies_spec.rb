@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe "companies" do
+describe "companies interface v2" do
   include Rack::Test::Methods
 
   describe "get" do
@@ -27,12 +27,11 @@ describe "companies" do
           subject { JSON.parse get_v2("/companies/1").body }
 
           its(["id"]) { should eq(1) }
-
           its(["name"]) { should eq("company1") }
-
           its(["credit_card_number"]) { should eq("1234") }
-
           its(["industry"]) { should be_nil }
+          it { should have_link("self").with_route("/companies/1") }
+          it { should have_link("basic").with_route("/companies/1/basic") }
 
           describe "_embedded" do
             subject { JSON.parse(get_v2("/companies/1").body)["_embedded"] }
@@ -91,12 +90,11 @@ describe "companies" do
           subject { JSON.parse get_v2("/companies/1/basic").body }
 
           its(["id"]) { should eq(1) }
-
           its(["name"]) { should eq("company1") }
-
           its(["credit_card_number"]) { should eq("1234") }
-
           its(["_embedded"]) { should be_nil }
+          it { should have_link("self").with_route("/companies/1/basic") }
+          it { should have_link("full").with_route("/companies/1") }
         end
       end
     end

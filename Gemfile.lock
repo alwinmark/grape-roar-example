@@ -1,3 +1,19 @@
+GIT
+  remote: git@github.com:intridea/grape.git
+  revision: 2be499c51542e536e9e0bf7fd4e7587dd069e289
+  ref: 2be499c51542e536e9e0bf7fd4e7587dd069e289
+  specs:
+    grape (0.5.1)
+      activesupport
+      builder
+      hashie (>= 1.2.0)
+      multi_json (>= 1.3.2)
+      multi_xml (>= 0.5.2)
+      rack (>= 1.3.0)
+      rack-accept
+      rack-mount
+      virtus
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -63,16 +79,6 @@ GEM
     do_sqlite3 (0.10.13)
       data_objects (= 0.10.13)
     fastercsv (1.5.5)
-    grape (0.5.0)
-      activesupport
-      builder
-      hashie (>= 1.2.0)
-      multi_json (>= 1.3.2)
-      multi_xml (>= 0.5.2)
-      rack (>= 1.3.0)
-      rack-accept
-      rack-mount
-      virtus
     grape-swagger (0.6.0)
       grape (>= 0.2.0)
       kramdown
@@ -126,7 +132,7 @@ PLATFORMS
 DEPENDENCIES
   data_mapper
   dm-sqlite-adapter
-  grape
+  grape!
   grape-swagger
   puma
   rack-test
