@@ -12,7 +12,7 @@ Start
 ## Documentation
 
 <table>
- <tr> <th> Curently broken </th></tr>
+ <tr> <th> Curently [broken](https://github.com/CansaSCityShuffle/grape-roar-example/blob/master/app/ressources/ad.rb#L7-8) </th></tr>
 </table>
 To view API Documentation go to:
 [http://petstore.swagger.wordnik.com/]
